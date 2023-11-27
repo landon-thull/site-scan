@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Landon Thull",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
 }
