@@ -1,4 +1,4 @@
-export class PageQueue {
+export class UrlQueue {
 	visited: Set<URL>;
 	toVisit: Set<URL>;
 
@@ -8,9 +8,9 @@ export class PageQueue {
 	}
 
 	/**
-	 * Returns the next link in the page queue
+	 * Returns the next link in the url queue
 	 *
-	 * @returns the next link in the page queue or null
+	 * @returns the next link in the url queue or null
 	 */
 	next(): URL | null {
 		// return null if no links left
@@ -27,9 +27,9 @@ export class PageQueue {
 	}
 
 	/**
-	 * Adds a url to the page queue
+	 * Adds a url to the url queue
 	 *
-	 * @param url the url to add to the page queue
+	 * @param url the url to add to the url queue
 	 */
 	add(url: URL): void {
 		if (!this.visited.has(url) && !this.toVisit.has(url)) {
