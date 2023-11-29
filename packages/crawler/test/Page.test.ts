@@ -5,10 +5,10 @@ import * as cheerio from "cheerio";
 const html = cheerio.load(
 	`<html>
   <head>
-  <title>Testing</title>
+  <title>Example Title</title>
   </head>
   <body>
-  <h1>Heading Here</h1>
+  <h1>Example Heading</h1>
   <h2>This is a heading</h2>
   
   <p>This is a paragraph.</p>
@@ -20,11 +20,28 @@ const html = cheerio.load(
   </html>`
 );
 
-test("testing", () => {
+test("getTitle returns title", () => {
+	const p = new Page(html);
+
+	expect(p.getTitle()).toBe("Example Title");
+});
+
+test("getHeading returns heading", () => {
+	const p = new Page(html);
+
+	expect(p.getHeading()).toBe("Example Heading");
+});
+
+test("countElement returns correct count", () => {
 	const p = new Page(html);
 
 	expect(p.countElement("p")).toEqual(2);
+});
 
-	console.log(p.getTitle());
-	console.log(p.getHeading());
+test("hasElement returns correct value", () => {
+	const p = new Page(html);
+
+	expect(p.hasElement("button")).toBe(true);
+
+	expect(p.hasElement("input")).toBe(false);
 });

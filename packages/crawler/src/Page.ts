@@ -24,4 +24,8 @@ export class Page {
 	countElement(element: string): number {
 		return this.$("body").find(element).length;
 	}
+
+	hasElement(element: string): boolean {
+		return this.$("body").find(element).length > 0;
+	}
 }
