@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { UrlQueue } from "../../../src/crawler/helpers/UrlQueue";
+import { UrlQueue } from "../../src/helpers/UrlQueue";
 
 const link = new URL("https://www.website.com");
 const link2 = new URL("https://www.website.com/test");

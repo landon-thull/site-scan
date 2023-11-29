@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { PageLoader } from "../../../src/crawler/loaders/PageLoader";
+import { PageLoader } from "../../src/loaders/PageLoader";
 
 const validLink = new URL("https://www.wikipedia.org");
 const invalidLink = new URL("https://abc.abc.abc");
@@ -9,7 +9,8 @@ test("loads valid link", async () => {
 
 	const page = await pl.load(validLink);
 
-	expect(page("title")).not.toBeNull();
+	expect(page.getTitle()).not.toBeNull();
+	console.log(page.getTitle());
 });
 
 test("throws error when given invalid link", async () => {
