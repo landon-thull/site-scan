@@ -13,6 +13,9 @@ const html = cheerio.load(
   
   <p>This is a paragraph.</p>
   <p>This is another paragraph.</p>
+
+  <a href="https://www.google.com"></a>
+  <a href="#invalid"></a>
   
   <button>Click me to hide paragraphs</button>
   
@@ -44,4 +47,12 @@ test("hasElement returns correct value", () => {
 	expect(p.hasElement("button")).toBe(true);
 
 	expect(p.hasElement("input")).toBe(false);
+});
+
+test("getLinks returns valid links", () => {
+	const p = new Page(html);
+
+	expect(p.getLinks().length).toBe(1);
+
+	expect(p.getLinks()[0]).toEqual(new URL("https://www.google.com"));
 });

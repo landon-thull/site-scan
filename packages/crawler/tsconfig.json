@@ -6,7 +6,6 @@
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"incremental": true,
-		"composite": true,
 		"skipLibCheck": true,
 		"noUncheckedIndexedAccess": true,
 		"outDir": "./dist"
